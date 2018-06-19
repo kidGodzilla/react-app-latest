@@ -1,6 +1,7 @@
-let path = require('path');
-let HtmlWebpackPlugin = require('html-webpack-plugin');
-let webpack = require('webpack');
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack');
 
 // NODE_ENV to production
 // uglify
@@ -21,9 +22,14 @@ let config = {
     devServer: {
         historyApiFallback: true
     },
-    plugins: [new HtmlWebpackPlugin({
-        template: 'app/index.html'
-    })]
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: 'app/index.html'
+        }),
+        new CopyWebpackPlugin([
+            { from: 'app/assets', to: 'assets' }
+        ]),
+    ]
 };
 
 if (process.env.NODE_ENV === 'production') {

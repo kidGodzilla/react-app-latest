@@ -1,5 +1,5 @@
 body {
-    font-family: 'Avenir next', 'Helvetica Neue', Lato, sans-serif;
+    font-family: 'Street 2', Gotham, 'Helvetica Neue', Lato, sans-serif;
 }
 
 ul {
@@ -12,7 +12,7 @@ li {
 
 a {
     text-decoration: none;
-    color: #d0021b;
+    /*color: #d0021b;*/
 }
 
 input {
@@ -88,16 +88,53 @@ label {
 }
 
 .nav {
-    display: flex;
+    margin-left: 64px;
+    margin-right: 64px;
+    margin-top: 30px;
 }
 
 .nav li {
-    margin-right: 15px;
+    display: inline-block;
+}
+.nav .right {
+    float: right;
+    margin-top: 9px;
 }
 
-.active {
-    font-weight: 500;
+.nav .logo {
+    height: 38px;
+    margin-right: 90px;
 }
+
+.nav h1 {
+    font-size: 38px;
+    font-weight: 500;
+    margin: 0;
+    position: relative;
+    top: -1px;
+}
+
+.nav li a .icon {
+    margin-top: 5px;
+}
+
+.nav li a .icon.active {
+    display: none;
+}
+.nav li a.focused .icon {
+    display: none;
+}
+.nav li a.focused .icon.active {
+    display: block;
+}
+
+.nav li .focused {
+    border: initial !important;
+}
+
+/*.active {*/
+    /*font-weight: 500;*/
+/*}*/
 
 .home-container {
     display: flex;
@@ -151,4 +188,97 @@ label {
 .popular-rank {
     font-size: 20px;
     margin: 10px;
+}
+.icon {
+    height: 28px;
+    margin-right: 72px;
+}
+.provider-logo {
+    height: 28px;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1824px;
+    margin: 0 auto;
+    padding-left: 20px;
+    margin-top: 30px;
+}
+
+.card {
+    background: #f3f3f3;
+    padding: 15px;
+    width: 400px;
+    border-radius: 3px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.card:hover {
+    opacity: 0.85;
+}
+
+.card .wrap {
+    min-height: 193px;
+    max-height: 200px;
+    overflow-y: hidden;
+}
+
+.card img {
+    width: 400px;
+}
+
+p {
+    line-height: 1.5;
+}
+
+p.desc {
+    font-size: 13px;
+}
+.title {
+    text-transform: capitalize;
+}
+
+.card {
+    border: 3px solid transparent;
+}
+
+.focused {
+    border: 3px solid #2BB0D8;
+}
+
+
+/* OVERLAY */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    min-height: 100vh;
+    font-family: 'Street 2', Gotham, "Helvetica Neue", sans-serif;
+    padding: 40px 160px;
+    background: #0f0f0f;
+    color: #f0f0f0;
+    overflow-y: scroll;
+}
+.overlay a {
+    color: #f0f0f0;
+    border: initial;
+}
+.overlay h1 {
+    font-size: 60px;
+    font-weight: 300;
+    line-height: 1.25;
+    margin-top: 0 !important;
+}
+.overlay a.focused h1 {
+    color: #3399CC;
+    font-weight: 500 !important;
+    border: initial;
+}
+.overlay .disabled {
+    opacity: 0.5;
 }

@@ -1,8 +1,8 @@
-var React = require('react');
-var PropTypes = require('prop-types');
-var api = require('../utils/api');
+const React = require('react');
+const PropTypes = require('prop-types');
+const api = require('../utils/api');
 
-var Loading = require('./Loading');
+const Loading = require('./Loading');
 
 function SelectLanguage (props) {
     let languages = ['All', 'Javascript', 'Ruby', 'Java', 'CSS', 'Python'];
@@ -75,7 +75,7 @@ class Popular extends React.Component {
     componentDidMount () {
         this.updateLanguage(this.state.selectedLanguage);
     }
-    updateLanguage(lang) {
+    updateLanguage (lang) {
         // Now we have a child who's bound to its parent's this context!
         this.setState(()=>{ // Oh look, getters and setters.. Hrmm...!
             return {
@@ -84,7 +84,7 @@ class Popular extends React.Component {
             }
         });
 
-        api.fetchPopularRepos(lang).then((repos) => {
+        api.fetchPopularRepos(lang).then(repos => {
             this.setState(() => {
                 return {
                     repos: repos
@@ -92,7 +92,7 @@ class Popular extends React.Component {
             });
         });
     }
-    render() {
+    render () {
         return (
             <div>
                 <SelectLanguage selectedLanguage={this.state.selectedLanguage} onSelect={this.updateLanguage} />
